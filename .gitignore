@@ -19,3 +19,7 @@
 *.exe
 *.out
 *.app
+
+# build directories
+regular-build
+em-build
