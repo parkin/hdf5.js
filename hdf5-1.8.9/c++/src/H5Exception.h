@@ -28,6 +28,8 @@ namespace H5 {
 #endif
 #endif
 
+#define H5std_string std::string
+
 class H5_DLLCPP Exception {
    public:
 	// Creates an exception with a function name where the failure occurs
