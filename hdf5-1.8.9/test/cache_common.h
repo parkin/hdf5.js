@@ -702,5 +702,9 @@ void validate_mdc_config(hid_t file_id,
                          hbool_t compare_init,
                          int test_num);
 
+hbool_t resize_configs_are_equal(const H5C_auto_size_ctl_t *a,
+                                 const H5C_auto_size_ctl_t *b,
+                                 hbool_t compare_init);
+
 #endif /* _CACHE_COMMON_H */
 

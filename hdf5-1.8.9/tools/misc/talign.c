@@ -24,6 +24,8 @@
 #include "hdf5.h"
 #include "H5private.h"
 
+hid_t h5tools_get_native_type(hid_t type);
+
 const char *fname = "talign.h5";
 const char *setname = "align";
 

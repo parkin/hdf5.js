@@ -2023,6 +2023,7 @@ FILE *file;
 #if YY_NEVER_INTERACTIVE
 	b->yy_is_interactive = 0;
 #else
+        hbool_t isatty(int F);
 	b->yy_is_interactive = file ? (isatty( fileno(file) ) > 0) : 0;
 #endif
 #endif
