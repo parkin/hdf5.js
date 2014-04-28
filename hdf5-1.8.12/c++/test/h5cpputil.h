@@ -31,9 +31,9 @@ using namespace H5;
 #endif
 
 #ifndef H5_NO_STD
+#endif
 using std::cerr;
 using std::endl;
-#endif
 
 #define MESSAGE(V,A) {if (HDGetTestVerbosity()>(V)) print_func A;}
 #define SUBTEST(TEST) {printf("   Subtest: %-52s",TEST); fflush(stdout);}

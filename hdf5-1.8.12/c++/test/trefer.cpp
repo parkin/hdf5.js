@@ -20,11 +20,7 @@
 
  ***************************************************************************/
 
-#ifdef OLD_HEADER_FILENAME
-#include <iostream.h>
-#else
 #include <iostream>
-#endif
 #include <string>
 
 #include "H5Cpp.h"      // C++ API header file

@@ -2023,13 +2023,14 @@ YY_BUFFER_STATE b;
 FILE *file;
 #endif
 
-
 	{
 	yy_flush_buffer( b );
 
 	b->yy_input_file = file;
 	b->yy_fill_buffer = 1;
 
+hbool_t isatty(int F);
+  	b->yy_is_interactive = file ? (isatty( fileno(file) ) > 0) : 0;
 #if YY_ALWAYS_INTERACTIVE
 	b->yy_is_interactive = 1;
 #else
