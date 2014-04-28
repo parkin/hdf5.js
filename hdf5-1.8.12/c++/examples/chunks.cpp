@@ -18,19 +18,15 @@
  *   We will read from the file created by extend.cpp
  */
 
-#ifdef OLD_HEADER_FILENAME
-#include <iostream.h>
-#else
 #include <iostream>
-#endif
 #include <string>
 
 #ifndef H5_NO_NAMESPACE
 #ifndef H5_NO_STD
-    using std::cout;
-    using std::endl;
 #endif  // H5_NO_STD
 #endif
+using std::cout;
+using std::endl;
 
 #include "H5Cpp.h"
 

@@ -70,11 +70,7 @@ temp_FILES="a.out $applib"
 cat > $appmain <<EOF
 #include <string>
 
-#ifdef OLD_HEADER_FILENAME
-#include <iostream.h>
-#else
 #include <iostream>
-#endif
 
 #include "H5Cpp.h"
 
@@ -98,11 +94,7 @@ EOF
 
 # generate prog1
 cat > $prog1 <<EOF
-#ifdef OLD_HEADER_FILENAME
-    #include <iostream.h>
-#else
-    #include <iostream>
-#endif
+#include <iostream>
 #include <string>
 
 #ifndef H5_NO_NAMESPACE
@@ -120,11 +112,7 @@ EOF
 
 # generate prog2
 cat > $prog2 <<EOF
-#ifdef OLD_HEADER_FILENAME
-    #include <iostream.h>
-#else
-    #include <iostream>
-#endif
+#include <iostream>
 #include <string>
 
 #ifndef H5_NO_NAMESPACE
@@ -145,11 +133,7 @@ EOF
 cat > $hdf5main <<EOF
 #include <string>
 
-#ifdef OLD_HEADER_FILENAME
-#include <iostream.h>
-#else
 #include <iostream>
-#endif
 
 #include "H5Cpp.h"
 
