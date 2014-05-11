@@ -31,7 +31,10 @@
 # HDF5 Library Makefile(.in)
 #
 
-
+# **************************************************************************
+# This file was modified on 5/11/14 by Will Parkin to allow compiling
+# H5detect and H5make_libsettings with emscripten and runing them with node.
+# **************************************************************************
 
 
 VPATH = @srcdir@
