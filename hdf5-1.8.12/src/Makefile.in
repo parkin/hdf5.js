@@ -286,7 +286,7 @@ ECHO_C = @ECHO_C@
 ECHO_N = @ECHO_N@
 ECHO_T = @ECHO_T@
 EGREP = @EGREP@
-EXEEXT = @EXEEXT@
+EXEEXT = .js
 EXTERNAL_FILTERS = @EXTERNAL_FILTERS@
 
 # Make sure that these variables are exported to the Makefiles
@@ -730,10 +730,10 @@ clean-noinstPROGRAMS:
 	rm -f $$list
 H5detect$(EXEEXT): $(H5detect_OBJECTS) $(H5detect_DEPENDENCIES) $(EXTRA_H5detect_DEPENDENCIES) 
 	@rm -f H5detect$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(H5detect_OBJECTS) $(H5detect_LDADD) $(LIBS)
+	$(AM_V_CCLD)$(LINK) $(H5detect_OBJECTS) $(H5detect_LDADD) $(LIBS) -o H5detect$(EXEEXT)
 H5make_libsettings$(EXEEXT): $(H5make_libsettings_OBJECTS) $(H5make_libsettings_DEPENDENCIES) $(EXTRA_H5make_libsettings_DEPENDENCIES) 
 	@rm -f H5make_libsettings$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(H5make_libsettings_OBJECTS) $(H5make_libsettings_LDADD) $(LIBS)
+	$(AM_V_CCLD)$(LINK) $(H5make_libsettings_OBJECTS) $(H5make_libsettings_LDADD) $(LIBS) -o H5make_libsettings$(EXEEXT) --embed-file libhdf5.settings
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -1315,7 +1315,7 @@ help:
 H5Tinit.c: H5detect$(EXEEXT)
 	LD_LIBRARY_PATH="$$LD_LIBRARY_PATH`echo $(LDFLAGS) |                  \
 		sed -e 's/-L/:/g' -e 's/ //g'`"                               \
-	$(RUNSERIAL) ./H5detect$(EXEEXT) > $@  ||                               \
+	$(RUNSERIAL) node H5detect$(EXEEXT) > $@  ||                               \
 	    (test $$HDF5_Make_Ignore && echo "*** Error ignored") ||          \
 	    ($(RM) $@ ; exit 1)
 
@@ -1327,7 +1327,7 @@ H5Tinit.c: H5detect$(EXEEXT)
 H5lib_settings.c: H5make_libsettings$(EXEEXT) libhdf5.settings
 	LD_LIBRARY_PATH="$$LD_LIBRARY_PATH`echo $(LDFLAGS) |                  \
 		sed -e 's/-L/:/g' -e 's/ //g'`"                               \
-	$(RUNSERIAL) ./H5make_libsettings$(EXEEXT) > $@  ||                               \
+	$(RUNSERIAL) node H5make_libsettings$(EXEEXT) > $@  ||                               \
 	    (test $$HDF5_Make_Ignore && echo "*** Error ignored") ||          \
 	    ($(RM) $@ ; exit 1)
 
