@@ -1,6 +1,6 @@
 # hdf5.js
 
-HDF5 compiled to JavaScript with emscripten.
+HDF5 compiled to JavaScript with [emscripten](https://github.com/kripken/emscripten/wiki).
 
 ## Compiling with Emscripten
 
@@ -65,3 +65,7 @@ abort() at Error
 ```
 
 So the data is read correctly, but there are still problems closing files.
+
+# Licenses
+
+The hdf5 [license](http://www.hdfgroup.org/ftp/HDF5/current/src/unpacked/COPYING).
