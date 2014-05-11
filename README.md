@@ -69,3 +69,4 @@ So the data is read correctly, but there are still problems closing files.
 # Licenses
 
 The hdf5 [license](http://www.hdfgroup.org/ftp/HDF5/current/src/unpacked/COPYING).
+The original hdf5 code has been modified to allow for building with emscripten.
