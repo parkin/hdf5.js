@@ -2,6 +2,10 @@
 
 HDF5 compiled to JavaScript with [emscripten](https://github.com/kripken/emscripten/wiki).
 
+## Emscripten
+
+I compiled emscripten-fastcomp and emscripten-fastcomp-clang from source. Instructions are [here](https://github.com/kripken/emscripten/wiki/LLVM-Backend). Note that compilation of hdf5.js has [failed](https://github.com/parkin/hdf5.js/issues/1) for some users using earlier versions of emscripten.
+
 ## Compiling with Emscripten
 
 
